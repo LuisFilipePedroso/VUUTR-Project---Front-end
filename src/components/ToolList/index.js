@@ -2,13 +2,14 @@ import React from 'react'
 
 import Tool from '../Tool'
 
-function ToolList({ tools }) {
+function ToolList({ tools, deleteTool }) {
     return (
         <div>
             {tools.map(tool => (
                 <Tool
                     key={tool.id}
-                    tool={tool} />
+                    tool={tool}
+                    deleteTool={deleteTool} />
             ))}
         </div>
     )
