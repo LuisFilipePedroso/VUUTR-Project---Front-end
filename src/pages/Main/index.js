@@ -27,7 +27,7 @@ function Main() {
         result = await api.get("/tools");
     }
 
-    setTools(result.data);
+    setTools(result.data.reverse());
     setIsReady(true);
   }
 
@@ -48,7 +48,7 @@ function Main() {
 
   if (isReady === true) {
     return (
-      <div className="container h-100 d-flex justify-content-center flex-column">
+      <div className="container h-100 d-flex justify-content-center flex-column mt-5">
         <h2 className="page-title mb-4">VUUTTR</h2>
         <h3 className="page-subTitle mb-4">Very Useful Tools To Remember</h3>
         <Toolbar createTool={createTool} handleSearch={fetchData} />

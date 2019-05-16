@@ -1,38 +1,38 @@
-import React, { useState, useEffect } from "react";
-import { IoIosSearch } from "react-icons/io";
-import { FaPlus } from "react-icons/fa";
+import React, { useState, useEffect } from "react"
+import { IoIosSearch } from "react-icons/io"
+import { FaPlus } from "react-icons/fa"
 
-import "./styles.css";
+import "./styles.css"
 
 function Toolbar({ createTool, handleSearch }) {
-  const [query, setQuery] = useState("");
-  const [checked, setChecked] = useState(false);
-  const [name, setName] = useState("");
-  const [link, setLink] = useState("");
-  const [description, setDescription] = useState("");
-  const [tags, setTags] = useState("");
+  const [query, setQuery] = useState("")
+  const [checked, setChecked] = useState(false)
+  const [name, setName] = useState("")
+  const [link, setLink] = useState("")
+  const [description, setDescription] = useState("")
+  const [tags, setTags] = useState("")
 
   useEffect(() => {
-    let action = {};
+    let action = {}
     if (query !== "") {
       action = {
         type: "SEARCH",
         query
-      };
-      handleSearch(action);
+      }
+      handleSearch(action)
     }
 
     if (checked === true) {
       action = {
         type: "SEARCH_TAG",
         query
-      };
-      handleSearch(action);
+      }
+      handleSearch(action)
     }
-  }, [query, checked]);
+  }, [query, checked])
 
   function handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault()
     const tool = {
       title: name,
       link,
@@ -45,7 +45,7 @@ function Toolbar({ createTool, handleSearch }) {
     setDescription("")
     setTags("")
 
-    document.getElementById('modal').modal('toggle')
+    document.getElementById('modal').click()
 
     createTool(tool)
   }
@@ -117,7 +117,7 @@ function Toolbar({ createTool, handleSearch }) {
                 data-dismiss="modal"
                 aria-label="Close"
               >
-                <span aria-hidden="true">&times;</span>
+                <span aria-hidden="true">&times</span>
               </button>
             </div>
             <div className="modal-body">
@@ -199,7 +199,7 @@ function Toolbar({ createTool, handleSearch }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Toolbar;
+export default Toolbar

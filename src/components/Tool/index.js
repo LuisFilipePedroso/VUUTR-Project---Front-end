@@ -1,6 +1,5 @@
-import React, { useState } from "react"
+import React from "react"
 import swal from "sweetalert"
-import { FaPlus } from "react-icons/fa"
 
 import "./styles.css"
 
@@ -8,7 +7,7 @@ function Tool({ tool, deleteTool }) {
 
   function handleDelete({ id, title }) {
     swal({
-      title: "x Remove tool",
+      title: "Remove tool",
       text: `Are you sure you want to remove ${title}?`,
       buttons: ["Cancel", "Yes, remove"]
     }).then((mustRemove) => {
