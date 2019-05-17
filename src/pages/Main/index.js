@@ -14,6 +14,7 @@ function Main() {
     fetchData()
   }, [])
 
+  //Method responsible to fetch the data from api
   async function fetchData(action = {}) {
     let result = {}
     switch (action.type) {
@@ -31,11 +32,13 @@ function Main() {
     setIsReady(true)
   }
 
+  //Method responsible to delete a tool
   async function deleteTool(id) {
     await api.delete(`/tools/${id}`)
     fetchData()
   }
 
+  //Method responsible to create a tool
   async function createTool({ title, link, description, tags }) {
     await api.post("/tools", {
       title,
