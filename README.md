@@ -10,7 +10,7 @@ This command will install dependencies that the project needs
 
 Runs the app in the development mode.<br>
 
-### Structure of the project
+## Structure of the project
 
 - Pages
     - The pages of the app must be placed here. 
