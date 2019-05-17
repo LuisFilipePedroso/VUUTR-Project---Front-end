@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from "react"
-import { IoIosSearch } from "react-icons/io"
-import { FaPlus } from "react-icons/fa"
+import React, { useState, useEffect } from 'react'
+import { IoIosSearch } from 'react-icons/io'
+import { FaPlus } from 'react-icons/fa'
 
 import "./styles.css"
 
 function Toolbar({ createTool, handleSearch }) {
-  const [query, setQuery] = useState("")
+  const [query, setQuery] = useState('')
   const [checked, setChecked] = useState(false)
-  const [name, setName] = useState("")
-  const [link, setLink] = useState("")
-  const [description, setDescription] = useState("")
-  const [tags, setTags] = useState("")
+  const [name, setName] = useState('')
+  const [link, setLink] = useState('')
+  const [description, setDescription] = useState('')
+  const [tags, setTags] = useState('')
 
   useEffect(() => {
     let action = {}
-    if (query !== "") {
+    if (query !== '') {
       action = {
         type: "SEARCH",
         query
@@ -24,12 +24,12 @@ function Toolbar({ createTool, handleSearch }) {
 
     if (checked === true) {
       action = {
-        type: "SEARCH_TAG",
+        type: 'SEARCH_TAG',
         query
       }
       handleSearch(action)
     }
-  }, [query, checked])
+  }, [query, checked, handleSearch])
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -40,10 +40,10 @@ function Toolbar({ createTool, handleSearch }) {
       tags: tags.split(" ")
     }
 
-    setName("")
-    setLink("")
-    setDescription("")
-    setTags("")
+    setName('')
+    setLink('')
+    setDescription('')
+    setTags('')
 
     document.getElementById('modal').click()
 
@@ -55,16 +55,16 @@ function Toolbar({ createTool, handleSearch }) {
       <div className="col-10">
         <div className="row d-flex flex-row align-items-center">
           <div className="col-4">
-            <div className="input-group">
+            <div className="input-group input-color br-5">
               <div className="input-group-prepend">
-                <span className="input-group-text bg-transparent">
+                <span className="input-group-text bg-transparent border-0">
                   <IoIosSearch size={22} />
                 </span>
               </div>
               <input
                 name="searchText"
                 type="text"
-                className="form-control"
+                className="form-control border-0"
                 placeholder="Search"
                 aria-label="Search"
                 onChange={e => setQuery(e.target.value)}
@@ -102,8 +102,7 @@ function Toolbar({ createTool, handleSearch }) {
         className="modal fade show"
         id="modal"
         tabIndex="-1"
-        role="dialog"
-      >
+        role="dialog">
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">
@@ -111,13 +110,8 @@ function Toolbar({ createTool, handleSearch }) {
                 <FaPlus className="mr-2" />
                 Add new tool
               </h5>
-              <button
-                type="button"
-                className="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times</span>
+              <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div className="modal-body">

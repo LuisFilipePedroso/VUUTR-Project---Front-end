@@ -1,7 +1,7 @@
-import React from "react"
-import swal from "sweetalert"
+import React from 'react'
+import swal from 'sweetalert'
 
-import "./styles.css"
+import './styles.css'
 
 function Tool({ tool, deleteTool }) {
 
@@ -35,11 +35,14 @@ function Tool({ tool, deleteTool }) {
           <p>{tool.description}</p>
         </div>
         <div className="col-12 d-flex flex-row">
-          {tool.tags.map(tag => (
-            <p key={tag} className="pr-2">
-              <b>#{tag}</b>
-            </p>
-          ))}
+          {tool.tags.map(tag => {
+            const random = Math.random()
+            return (
+              <p key={random} className="pr-2">
+                <b>#{tag}</b>
+              </p>
+            )
+          })}
         </div>
       </div>
     </div>

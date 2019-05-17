@@ -1,7 +1,11 @@
+.main-wrapper {
+    margin-top: 10%;
+}
+
 .page-title {
     font-size: 2.25em;
 }
 
-.page-subTitle {
-    font-size: 1.875em;
+.page-subtitle {
+    font-size: 1.475em;
 }
