@@ -116,7 +116,7 @@ function Toolbar({ createTool, handleSearch }) {
             </div>
             <div className="modal-body">
               <form onSubmit={handleSubmit}>
-                <div className="row">
+                <div className="row mb-4">
                   <div className="col-12">
                     <label htmlFor="name">Tool name</label>
                   </div>
@@ -130,7 +130,7 @@ function Toolbar({ createTool, handleSearch }) {
                     />
                   </div>
                 </div>
-                <div className="row">
+                <div className="row mb-4">
                   <div className="col-12">
                     <label htmlFor="link">Tool link</label>
                   </div>
@@ -144,7 +144,7 @@ function Toolbar({ createTool, handleSearch }) {
                     />
                   </div>
                 </div>
-                <div className="row">
+                <div className="row mb-4">
                   <div className="col-12">
                     <label htmlFor="description">Tool description</label>
                   </div>
@@ -158,7 +158,7 @@ function Toolbar({ createTool, handleSearch }) {
                     />
                   </div>
                 </div>
-                <div className="row">
+                <div className="row mb-4">
                   <div className="col-12">
                     <label htmlFor="tags">Tags</label>
                   </div>
@@ -184,7 +184,7 @@ function Toolbar({ createTool, handleSearch }) {
                     type="submit"
                     className="btn btn-success btn-dark-green"
                   >
-                    Save changes
+                    Add tool
                   </button>
                 </div>
               </form>
